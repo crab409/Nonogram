@@ -154,7 +154,7 @@ def count_solution(table) :
 def is_clear(board, solution_table) :
     newBoard = [
         [
-            data for data in line
+            (0 if (data != 1) else 1) for data in line
         ] for line in board
     ]
     print(newBoard)
@@ -164,7 +164,7 @@ def is_clear(board, solution_table) :
 
     for i in range(0, len(board), 1) : 
         for j in range(0, len(board[0]), 1) : 
-            if(board[i][j] != solution_table[i][j]) : 
+            if(newBoard[i][j] != solution_table[i][j]) : 
                 return False
     return True
 
